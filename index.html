@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fumigadora de Lanús | Salud Ambiental & Control de Plagas</title>
+    
+    <link rel="icon" href="Logo principal.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0b2545', 800: '#134074', 700: '#1d4e89' },
+                        slateCustom: '#8da9c4',
+                        goldCustom: '#d4af37',
+                        lightBg: '#f4f6f9'
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-lightBg font-sans text-slate-800 antialiased selection:bg-navy-800 selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-navy-900 text-slate-300 text-xs md:text-sm py-2 px-4 border-b border-navy-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+                <a href="tel:42495598" class="hover:text-goldCustom transition flex items-center gap-1.5"><i class="fa-solid fa-phone text-goldCustom"></i> 4249-5598</a>
+                <a href="https://wa.me/5491136790000" target="_blank" rel="noopener" class="hover:text-goldCustom transition flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-emerald-400"></i> 11 3679-0000</a>
+                <a href="mailto:lafumigadoradelanus@gmail.com" class="hover:text-goldCustom transition hidden sm:flex items-center gap-1.5"><i class="fa-solid fa-envelope text-goldCustom"></i> lafumigadoradelanus@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="text-xs text-slate-400 hidden lg:inline"><i class="fa-solid fa-shield-halved text-goldCustom mr-1"></i> Reg. Mpal. Lanús N° 001 | PBA N° 1750 | Factura A / B</span>
+                <a href="https://www.facebook.com/lafumigadorade.lanus/?locale=es_LA" target="_blank" rel="noopener" class="hover:text-goldCustom transition text-sm flex items-center gap-1"><i class="fa-brands fa-facebook"></i> <span class="hidden sm:inline">Facebook</span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Nav -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="Logo principal.jpg" alt="Logo La Fumigadora de Lanús" class="h-12 w-auto object-contain rounded border border-slate-200 shadow-sm">
+                <div>
+                    <span class="block text-xl font-black tracking-tight text-navy-900 group-hover:text-navy-800 transition">LA FUMIGADORA DE LANÚS</span>
+                    <span class="block text-xs font-semibold tracking-wider text-navy-700 uppercase">Salud Ambiental & Control de Plagas</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 font-medium text-slate-700">
+                <a href="#inicio" class="hover:text-navy-900 transition py-1">Inicio</a>
+                <a href="#servicios" class="hover:text-navy-900 transition py-1">Servicios</a>
+                <a href="#clientes" class="hover:text-navy-900 transition py-1">Clientes</a>
+                <a href="#galeria" class="hover:text-navy-900 transition py-1">Galería</a>
+                <a href="#video" class="hover:text-navy-900 transition py-1">Video</a>
+                <a href="#facturacion" class="hover:text-navy-900 transition py-1">Facturación</a>
+                <a href="#contacto" class="hover:text-navy-900 transition py-1">Contacto</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="#contacto" onclick="smoothScrollToContacto(event)" class="bg-navy-900 hover:bg-navy-800 text-white text-sm font-semibold px-4 py-2.5 rounded-lg shadow transition duration-200 flex items-center gap-2 border border-navy-700">
+                    <i class="fa-regular fa-clipboard"></i> Inspección Gratuita
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-navy-900 p-2 focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2">
+            <a href="#inicio" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Inicio</a>
+            <a href="#servicios" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Servicios</a>
+            <a href="#clientes" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Clientes</a>
+            <a href="#galeria" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Galería</a>
+            <a href="#video" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Video</a>
+            <a href="#facturacion" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Facturación</a>
+            <a href="#contacto" class="block py-2 text-slate-700 font-medium hover:text-navy-900">Contacto</a>
+            <a href="#contacto" onclick="smoothScrollToContacto(event)" class="block w-full text-center bg-navy-900 text-white font-semibold py-2.5 rounded-lg shadow mt-2">Solicitar Inspección Gratuita</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#8da9c4_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-700/60 border border-slateCustom/30 text-xs sm:text-sm font-medium text-slate-200">
+                        <i class="fa-solid fa-award text-goldCustom"></i> Más de 30 años de Excelencia e Integridad Profesional
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Soluciones Integrales de <span class="text-slateCustom">Salud Ambiental</span> y Control de Plagas
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Protegemos instituciones públicas, industrias, comercios y consorcios. Servicio certificado con las más estrictas normas de seguridad higiénico-sanitaria.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs font-semibold text-slate-300">
+                        <span class="bg-navy-900/80 px-3 py-1.5 rounded-md border border-slate-700 flex items-center gap-2"><i class="fa-solid fa-check-circle text-emerald-400"></i> Registro Municipal Lanús N° 001</span>
+                        <span class="bg-navy-900/80 px-3 py-1.5 rounded-md border border-slate-700 flex items-center gap-2"><i class="fa-solid fa-check-circle text-emerald-400"></i> Habilitación PBA N° 1750</span>
+                        <span class="bg-navy-900/80 px-3 py-1.5 rounded-md border border-goldCustom/40 flex items-center gap-2 text-goldCustom"><i class="fa-solid fa-file-invoice-dollar"></i> Responsable Inscripto (Factura A / B)</span>
+                    </div>
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#contacto" onclick="smoothScrollToContacto(event)" class="w-full sm:w-auto bg-goldCustom hover:bg-yellow-600 text-navy-900 font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition duration-200 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-clipboard-check text-lg"></i> Solicitar Inspección Gratuita
+                        </a>
+                        <a href="https://wa.me/5491136790000?text=Hola,%20quisiera%20solicitar%20un%20presupuesto%20o%20inspecci%C3%B3n%20para%20control%20de%20plagas." target="_blank" rel="noopener" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-xl transition duration-200 text-center flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp Directo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/15 shadow-2xl space-y-6">
+                        <h2 class="text-xl font-bold text-white flex items-center gap-2 border-b border-white/10 pb-3">
+                            <i class="fa-solid fa-headset text-goldCustom"></i> Atención Corporativa & Particular
+                        </h2>
+                        <ul class="space-y-4 text-slate-200 text-sm">
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i> <span><strong>Atención Inmediata:</strong> Cobertura prioritaria para emergencias comerciales e industriales.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-file-invoice text-emerald-400 mt-1"></i> <span><strong>Emisión de Factura A:</strong> Emitimos comprobantes fiscales oficiales A y B aptos para deducción de IVA y Ganancias.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i> <span><strong>Certificación Oficial:</strong> Otorgamos certificados aptos para inspecciones municipales y de auditoría.</span></li>
+                            <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-emerald-400 mt-1"></i> <span><strong>Productos Aprobados:</strong> Utilización exclusiva de insumos homologados por ANMAT y Ministerios de Salud.</span></li>
+                        </ul>
+                        <div class="pt-2 border-t border-white/10 text-xs text-slate-300 text-center">
+                            Central Telefónica: <a href="tel:42495598" class="text-goldCustom font-bold hover:underline">4249-5598</a> | <a href="https://wa.me/5491136790000" class="text-emerald-400 font-bold hover:underline">11 3679-0000</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clientes Destacados Section -->
+    <section id="clientes" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-navy-800 bg-slate-100 px-3 py-1 rounded-full">Confianza Comprobada</span>
+                <h2 class="text-3xl font-extrabold text-navy-900 mt-3">Empresas e Instituciones que Confían en Nosotros</h2>
+                <p class="text-slate-600 mt-2">Brindamos soluciones sostenibles a entidades de primer nivel nacional, garantizando continuidad operativa e higiene.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <div class="bg-lightBg p-6 rounded-xl border border-slate-200 shadow-sm text-center hover:shadow-md transition flex flex-col items-center justify-center h-44 group">
+                    <div class="h-20 w-full flex items-center justify-center p-2 mb-2">
+                        <img src="logo nacion.png" alt="Logo Banco Nación" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-200">
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Entidad Bancaria Nacional</p>
+                </div>
+
+                <div class="bg-lightBg p-6 rounded-xl border border-slate-200 shadow-sm text-center hover:shadow-md transition flex flex-col items-center justify-center h-44 group">
+                    <div class="h-20 w-full flex items-center justify-center p-2 mb-2">
+                        <img src="logo provincia.png" alt="Logo Banco Provincia" class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-200">
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Institución Financiera</p>
+                </div>
+
+                <div class="bg-lightBg p-6 rounded-xl border border-slate-200 shadow-sm text-center hover:shadow-md transition flex flex-col items-center justify-center h-44 group">
+                    <div class="h-20 w-full flex items-center justify-center p-2 mb-2">
+                        <img src="logo ferrum.png" alt="Logo Ferrum S.A." class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-200">
+                    </div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Líder Industrial</p>
+                </div>
+
+                <div class="bg-lightBg p-6 rounded-xl border border-slate-200 shadow-sm text-center hover:shadow-md transition flex flex-col items-center justify-center h-44 group">
+                    <div class="w-14 h-14 bg-navy-900 text-goldCustom rounded-full flex items-center justify-center mx-auto mb-2 text-2xl group-hover:scale-110 transition shadow-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="font-bold text-navy-900 text-base">INSTITUTO SAN AGUSTÍN</h3>
+                    <p class="text-xs font-semibold text-slate-500 mt-0.5 uppercase tracking-wider">Institución Educativa Lanús</p>
+                </div>
+            </div>
+
+            <!-- Red de Clientes Tarjetas Blancas -->
+            <div class="mt-8">
+                <h3 class="text-center font-extrabold text-navy-900 text-lg uppercase tracking-wider mb-8 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-truck-ramp-box text-navy-800"></i> Red de Clientes Industriales, Servicios y Comercio
+                </h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-gas-pump text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Estación GNC 25 de Mayo</h4><p class="text-xs text-slate-400">Argumal S.A.</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-gas-pump text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Estaciones de Servicio YPF</h4><p class="text-xs text-slate-400">Bielva S.A. / Paranay S.A. / Melinka SRL</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-car text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Grupo Rosales Repuestos</h4><p class="text-xs text-slate-400">Grupo Rosales Repuestos S.A.</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-notes-medical text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Instituto Médico Roenthal</h4><p class="text-xs text-slate-400">Instituto Roenthal S.A.</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-prescription-bottle-medical text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Farma Lanús</h4><p class="text-xs text-slate-400">Farma Lanús Comandita Simple</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-wine-glass text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Don Bebida 2020</h4><p class="text-xs text-slate-400">Don Bebida2020 S.R.L.</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-box text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Lomapack Embalajes</h4><p class="text-xs text-slate-400">Lomapack</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-microchip text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">VitalTronic Estética</h4><p class="text-xs text-slate-400">Vitaltronic</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-gears text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Extender Moliendas</h4><p class="text-xs text-slate-400">Extender S.A.</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-regular fa-snowflake text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Frío 21 Refrigeración</h4><p class="text-xs text-slate-400">Frío 21 SRL</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-truck-ramp-box text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Surnes Distribuciones</h4><p class="text-xs text-slate-400">Surnes Distribuciones S.R.L.</p></div></div>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-l-navy-800 border-y border-r border-slate-200 shadow-sm hover:shadow-md transition flex items-center gap-3"><i class="fa-solid fa-warehouse text-navy-800 text-2xl shrink-0"></i><div><h4 class="font-bold text-slate-800 text-sm leading-snug">Socoroma Depósitos</h4><p class="text-xs text-slate-400">Socoroma S.A.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-16 bg-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-navy-800 bg-white border border-slate-200 px-3 py-1 rounded-full">Servicios Técnicos Especializados</span>
+                <h2 class="text-3xl font-extrabold text-navy-900 mt-3">Control Integral de Plagas Urbano e Industrial</h2>
+                <p class="text-slate-600 mt-2">Planes preventivos y correctivos diseñados según los estándares de higiene ambiental vigentes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-navy-900/10 text-navy-900 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-bug"></i></div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Desinsectación Integral</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Control de insectos rastreros y voladores (cucarachas, hormigas, moscas, mosquitos, chinches). Aplicación con geles inodoros y aspersión de ultra bajo volumen.</p>
+                    <a href="#contacto" onclick="smoothScrollToContacto(event)" class="text-navy-800 text-sm font-semibold hover:underline inline-flex items-center gap-1">Solicitar servicio <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-navy-900/10 text-navy-900 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-shield-virus"></i></div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Desinfección Sanitaria</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Tratamientos bactericidas, fungicidas y virucidas de amplio espectro. Ideal para instituciones sanitarias, colegios, oficinas y consorcios.</p>
+                    <a href="#contacto" onclick="smoothScrollToContacto(event)" class="text-navy-800 text-sm font-semibold hover:underline inline-flex items-center gap-1">Solicitar servicio <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-navy-900/10 text-navy-900 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-staff-snake"></i></div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Desratización & Roedores</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Planes de exclusión y erradicación de roedores mediante cebos parametrizados en estaciones de seguridad inviolables aprobadas por SENASA.</p>
+                    <a href="#contacto" onclick="smoothScrollToContacto(event)" class="text-navy-800 text-sm font-semibold hover:underline inline-flex items-center gap-1">Solicitar servicio <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-navy-900/10 text-navy-900 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-droplet"></i></div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Limpieza de Tanques de Agua</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Higienización, desinfección y análisis bacteriológico/físico-químico de tanques de agua potable en consorcios e industrias con certificado municipal.</p>
+                    <a href="#contacto" onclick="smoothScrollToContacto(event)" class="text-navy-800 text-sm font-semibold hover:underline inline-flex items-center gap-1">Solicitar servicio <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-navy-900/10 text-navy-900 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-warehouse"></i></div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">MIP (Manejo Integrado de Plagas)</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Sistemas de monitoreo continuo para auditorías de calidad (HACCP, BPM, ISO) en industrias alimenticias, depósitos y gastronómicos.</p>
+                    <a href="#contacto" onclick="smoothScrollToContacto(event)" class="text-navy-800 text-sm font-semibold hover:underline inline-flex items-center gap-1">Solicitar servicio <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-navy-900/10 text-navy-900 rounded-lg flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-2">Certificaciones Oficiales</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Emisión inmediata de certificados exigidos por organismos municipales, provinciales y entes reguladores de control de salud.</p>
+                    <a href="#contacto" onclick="smoothScrollToContacto(event)" class="text-navy-800 text-sm font-semibold hover:underline inline-flex items-center gap-1">Solicitar servicio <i class="fa-solid fa-arrow-right text-xs"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Carrusel Section -->
+    <section id="galeria" class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-navy-800 bg-slate-100 px-3 py-1 rounded-full">Registro de Trabajos</span>
+                <h2 class="text-3xl font-extrabold text-navy-900 mt-3">Galería Operativa & Equipamiento</h2>
+                <p class="text-slate-600 mt-2">Imágenes de nuestras operaciones, vehículos habilitados y equipamiento de precisión.</p>
+            </div>
+
+            <!-- Carousel Component -->
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 bg-navy-900 group">
+                <div id="carousel-container" class="relative h-[320px] sm:h-[450px] md:h-[550px] w-full">
+                    
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide absolute inset-0 w-full h-full opacity-100 transition-opacity duration-700 ease-in-out pointer-events-auto z-10">
+                        <img src="portada1.jpg" alt="Operación de Fumigación" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                            <p class="font-bold text-lg">Unidades y Operaciones Habilitadas</p>
+                            <p class="text-xs text-slate-300">Cohesión y equipamiento técnico en terreno</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out pointer-events-none z-0">
+                        <img src="490271142_4310036225895814_173027888798368783_n.jpg" alt="Servicio Técnico La Fumigadora de Lanús" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                            <p class="font-bold text-lg">Atención Profesional e Insumos Certificados</p>
+                            <p class="text-xs text-slate-300">Aplicación segura de productos homologados</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out pointer-events-none z-0">
+                        <img src="490654414_4310036399229130_8951215696725493175_n.jpg" alt="Control e Higiene Ambiental" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                            <p class="font-bold text-lg">Procesos de Mantenimiento Preventivo</p>
+                            <p class="text-xs text-slate-300">Tratamiento efectivo en espacios comerciales e industriales</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out pointer-events-none z-0">
+                        <img src="490666925_4310036242562479_813451945441603937_n.jpg" alt="Flotas y Equipos de Fumigación" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                            <p class="font-bold text-lg">Cobertura en Todo Lanús y Gran Buenos Aires</p>
+                            <p class="text-xs text-slate-300">Respuestas rápidas para emergencias sanitarias</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="carousel-slide absolute inset-0 w-full h-full opacity-0 transition-opacity duration-700 ease-in-out pointer-events-none z-0">
+                        <img src="490902337_4310037642562339_4768442486622483023_n.jpg" alt="Certificación y Compromiso Institucional" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-6 text-white">
+                            <p class="font-bold text-lg">Compromiso con la Salud Ambiental</p>
+                            <p class="text-xs text-slate-300">Acreditaciones oficiales Registro N° 001</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls -->
+                <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="Anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/80 text-white w-10 h-10 rounded-full flex items-center justify-center transition" aria-label="Siguiente">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <!-- Dots Nav -->
+                <div id="carousel-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Video Promocional -->
+    <section id="video" class="py-16 bg-navy-900 text-white relative overflow-hidden border-b border-navy-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-goldCustom bg-navy-800 border border-goldCustom/30 px-3.5 py-1 rounded-full">
+                    <i class="fa-solid fa-circle-play mr-1"></i> Video Institucional
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-3">Conozca Nuestros Procesos de Control y Salud Ambiental</h2>
+                <p class="text-slate-300 text-sm md:text-base mt-2">
+                    Visualice cómo trabajamos en terreno con equipamiento homologado, certificaciones de calidad y protocolos de bioseguridad.
+                </p>
+            </div>
+
+            <!-- Video Player Wrapper -->
+            <div class="relative max-w-md md:max-w-2xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-navy-700 bg-black">
+                <div class="aspect-w-9 aspect-h-16 md:aspect-w-16 md:aspect-h-9 w-full flex justify-center bg-black">
+                    <video controls class="w-full max-h-[600px] object-contain rounded-2xl" poster="Logo principal.jpg">
+                        <source src="video.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video HTML5.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Puntos Clave debajo del video -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 text-center">
+                <div class="bg-navy-800/60 p-4 rounded-xl border border-navy-700/60 backdrop-blur-sm">
+                    <i class="fa-solid fa-shield-halved text-goldCustom text-2xl mb-2"></i>
+                    <h3 class="font-bold text-sm text-white">30+ Años de Experiencia</h3>
+                    <p class="text-xs text-slate-300 mt-1">Servicios certificados e impecables en Lanús y GBA.</p>
+                </div>
+                <div class="bg-navy-800/60 p-4 rounded-xl border border-navy-700/60 backdrop-blur-sm">
+                    <i class="fa-solid fa-clipboard-check text-emerald-400 text-2xl mb-2"></i>
+                    <h3 class="font-bold text-sm text-white">Planes MIP Aprobados</h3>
+                    <p class="text-xs text-slate-300 mt-1">Cumplimiento estricto con normas HACCP e ISO.</p>
+                </div>
+                <div class="bg-navy-800/60 p-4 rounded-xl border border-navy-700/60 backdrop-blur-sm">
+                    <i class="fa-solid fa-file-invoice-dollar text-goldCustom text-2xl mb-2"></i>
+                    <h3 class="font-bold text-sm text-white">Facturación A y B</h3>
+                    <p class="text-xs text-slate-300 mt-1">Certificados inmediatos y deducibilidad fiscal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Responsables Inscriptos & Facturación -->
+    <section id="facturacion" class="py-14 bg-lightBg border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-900 rounded-2xl p-8 md:p-10 text-white shadow-xl border border-navy-700">
+                <div class="text-center max-w-3xl mx-auto mb-8">
+                    <span class="text-xs font-bold uppercase tracking-widest text-goldCustom bg-navy-800 border border-goldCustom/30 px-3.5 py-1 rounded-full">
+                        <i class="fa-solid fa-receipt mr-1"></i> Solidez Impositiva & Transparencia
+                    </span>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-3">Empresa Inscripta en IVA y Ganancias: Emisión de Factura A</h2>
+                    <p class="text-slate-300 text-sm md:text-base mt-2">
+                        Al contratar con un prestador registrado como <strong>Responsable Inscripto</strong>, tu empresa o comercio obtiene un respaldo legal y fiscal completo, además de importantes beneficios impositivos.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Beneficios Empresas / Pymes -->
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 space-y-3">
+                        <div class="flex items-center gap-3 text-goldCustom font-bold text-lg">
+                            <div class="w-10 h-10 rounded-lg bg-goldCustom/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <h3>Para Empresas, Pymes, Consorcios y Comercios</h3>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 pt-2">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Discriminación del IVA (Factura A):</strong> Te permite computar el 21% de IVA como crédito fiscal en tus declaraciones juradas.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Deducción en Impuesto a las Ganancias:</strong> Registra el servicio como gasto operativo 100% deducible.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Conformidad en Auditorías y Mantenimiento:</strong> Comprobante fiscal formal exigido para auditorías de calidad (HACCP, ISO) y habilitaciones municipales.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Beneficios Particulares / Finales -->
+                    <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 space-y-3">
+                        <div class="flex items-center gap-3 text-slateCustom font-bold text-lg">
+                            <div class="w-10 h-10 rounded-lg bg-slateCustom/10 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-house-user"></i>
+                            </div>
+                            <h3>Para Particulares y Consorcios de Vivienda</h3>
+                        </div>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-200 pt-2">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Garantía de Legalidad:</strong> Contratas un servicio regulado, registrado ante AFIP y los organismos de Salud Pública.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Emisión de Factura B:</strong> Comprobante formal que respalda la garantía del trabajo realizado en tu propiedad.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Respaldo en Administraciones:</strong> Ideal para consorcios que requieren rendición de expensas con facturación oficial transparente.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario y Contacto Section -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-navy-800 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">Atención Directa</span>
+                        <h2 class="text-3xl font-extrabold text-navy-900 mt-3">Solicite su Inspección o Presupuesto</h2>
+                        <p class="text-slate-600 mt-2">Complete el formulario o comuníquese a nuestras líneas de atención técnica. Responderemos a la brevedad.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-lightBg rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 bg-navy-900 text-goldCustom rounded-lg flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-phone"></i></div>
+                            <div><h3 class="font-bold text-navy-900 text-sm">Teléfono Fijo</h3><p class="text-slate-700 text-sm mt-0.5"><a href="tel:42495598" class="hover:text-navy-900 font-semibold">4249-5598</a></p></div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-lightBg rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 bg-emerald-600 text-white rounded-lg flex items-center justify-center text-lg shrink-0"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div><h3 class="font-bold text-navy-900 text-sm">WhatsApp Corporativo</h3><p class="text-slate-700 text-sm mt-0.5"><a href="https://wa.me/5491136790000" target="_blank" rel="noopener" class="hover:text-emerald-600 font-semibold">11 3679-0000</a></p></div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-lightBg rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 bg-navy-900 text-goldCustom rounded-lg flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-envelope"></i></div>
+                            <div><h3 class="font-bold text-navy-900 text-sm">Correo Electrónico</h3><p class="text-slate-700 text-sm mt-0.5"><a href="mailto:lafumigadoradelanus@gmail.com" class="hover:text-navy-900 font-semibold">lafumigadoradelanus@gmail.com</a></p></div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-lightBg rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 bg-navy-900 text-goldCustom rounded-lg flex items-center justify-center text-lg shrink-0"><i class="fa-brands fa-facebook"></i></div>
+                            <div><h3 class="font-bold text-navy-900 text-sm">Facebook Oficial</h3><p class="text-slate-700 text-sm mt-0.5"><a href="https://www.facebook.com/lafumigadorade.lanus/?locale=es_LA" target="_blank" rel="noopener" class="hover:text-navy-900 text-xs font-semibold underline">facebook.com/lafumigadorade.lanus</a></p></div>
+                        </div>
+                    </div>
+
+                    <div class="bg-navy-900 text-white p-6 rounded-xl border border-navy-800 shadow">
+                        <h4 class="font-bold text-goldCustom mb-2 text-sm flex items-center gap-2"><i class="fa-solid fa-certificate"></i> Habilitaciones & Fiscalidad</h4>
+                        <ul class="text-xs space-y-1.5 text-slate-300">
+                            <li>• Condición Impositiva: Responsable Inscripto</li>
+                            <li>• Emisión Oficial de Factura A y B</li>
+                            <li>• Registro Municipal de Lanús N° 001</li>
+                            <li>• Habilitación Provincia de Buenos Aires N° 1750</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 bg-lightBg p-8 rounded-2xl border border-slate-200 shadow-md">
+                    <h3 class="text-2xl font-bold text-navy-900 mb-6 flex items-center gap-2">
+                        <i class="fa-regular fa-paper-plane text-navy-800"></i> Formulario de Solicitud Directa
+                    </h3>
+                    <form action="https://formspree.io/f/lafumigadoradelanus@gmail.com" method="POST" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre / Razón Social *</label>
+                                <input type="text" id="name" name="nombre_o_empresa" required placeholder="Ej: Juan Pérez / Empresa S.A." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none text-sm transition bg-white">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-xs font-bold text-slate-700 uppercase mb-1">Teléfono de Contacto *</label>
+                                <input type="tel" id="phone" name="telefono" required placeholder="Ej: 11 1234-5678" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none text-sm transition bg-white">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-slate-700 uppercase mb-1">Correo Electrónico *</label>
+                                <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none text-sm transition bg-white">
+                            </div>
+                            <div>
+                                <label for="tipo_factura" class="block text-xs font-bold text-slate-700 uppercase mb-1">Facturación Requerida</label>
+                                <select id="tipo_factura" name="tipo_factura" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none text-sm transition bg-white">
+                                    <option value="Factura A (Responsable Inscripto)">Factura A (Empresas / CUIT)</option>
+                                    <option value="Factura B (Consumidor Final / Consorcio)">Factura B (Consumidor Final / Consorcios)</option>
+                                    <option value="Sin preferencia / A consultar">A consultar</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="servicio" class="block text-xs font-bold text-slate-700 uppercase mb-1">Servicio Requerido</label>
+                            <select id="servicio" name="servicio_interes" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none text-sm transition bg-white">
+                                <option value="Inspección Gratuita / Diagnóstico">Inspección Gratuita / Diagnóstico</option>
+                                <option value="Control de Plagas General">Control de Plagas General (Insectos/Cucarachas)</option>
+                                <option value="Desratización">Desratización / Control de Roedores</option>
+                                <option value="Limpieza de Tanques de Agua">Limpieza y Desinfección de Tanques de Agua</option>
+                                <option value="Desinfección Sanitaria">Desinfección Sanitaria de Espacios</option>
+                                <option value="Abono Mensual MIP">Abono Mensual MIP para Empresas</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-xs font-bold text-slate-700 uppercase mb-1">Detalle del Mensaje o CUIT *</label>
+                            <textarea id="message" name="mensaje" rows="4" required placeholder="Indique su CUIT si requiere Factura A, dirección orientativa o necesidades técnicas..." class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-navy-800 focus:border-transparent outline-none text-sm transition bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-navy-900 hover:bg-navy-800 text-white font-bold py-3.5 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje a lafumigadoradelanus@gmail.com
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-slate-300 py-12 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-navy-800">
+                <div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <img src="Logo principal.jpg" alt="Logo" class="h-10 w-auto rounded border border-slate-700">
+                        <span class="font-bold text-white text-lg">LA FUMIGADORA DE LANÚS</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Empresa referente en soluciones de Salud Ambiental y Control Integrado de Plagas Urbanas e Industriales.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Enlaces Rápidos</h4>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#inicio" class="hover:text-goldCustom transition">• Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-goldCustom transition">• Servicios de Fumigación</a></li>
+                        <li><a href="#clientes" class="hover:text-goldCustom transition">• Clientes Destacados</a></li>
+                        <li><a href="#video" class="hover:text-goldCustom transition">• Video Institucional</a></li>
+                        <li><a href="#facturacion" class="hover:text-goldCustom transition">• Beneficios Factura A</a></li>
+                        <li><a href="#contacto" onclick="smoothScrollToContacto(event)" class="hover:text-goldCustom transition">• Solicitar Inspección Gratuita</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-3">Acreditaciones Técnicas & Fiscales</h4>
+                    <p class="text-xs text-slate-400 mb-2">Responsable Inscripto. Habilitación oficial para expedición de certificados y comprobantes A/B vigentes en Lanús y PBA.</p>
+                    <span class="inline-block bg-navy-800 text-goldCustom font-mono text-xs px-2.5 py-1 rounded border border-navy-700">Reg. Municipal N° 001 | PBA N° 1750</span>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 La Fumigadora de Lanús. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/lafumigadorade.lanus/?locale=es_LA" target="_blank" rel="noopener" class="hover:text-slate-300 transition">Facebook Oficial</a>
+                    <a href="mailto:lafumigadoradelanus@gmail.com" class="hover:text-slate-300 transition">Email de Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5491136790000?text=Hola,%20quisiera%20solicitar%20un%20presupuesto%20o%20inspecci%C3%B3n%20para%20control%20de%20plagas." target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-white" aria-label="Contactar por WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Scripts JS -->
+    <script>
+        function smoothScrollToContacto(e) {
+            e.preventDefault();
+            const contactoSection = document.getElementById('contacto');
+            if (contactoSection) { contactoSection.scrollIntoView({ behavior: 'smooth' }); }
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('carousel-dots');
+            let currentIndex = 0;
+            let slideInterval;
+
+            if (slides.length > 0) {
+                slides.forEach((_, idx) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-2.5', 'h-2.5', 'rounded-full', 'bg-white/50', 'transition-all');
+                    if (idx === 0) dot.classList.add('!bg-goldCustom', 'w-6');
+                    dot.addEventListener('click', () => goToSlide(idx));
+                    dotsContainer.appendChild(dot);
+                });
+
+                const dots = dotsContainer.querySelectorAll('button');
+
+                function updateSlides() {
+                    slides.forEach((slide, idx) => {
+                        if (idx === currentIndex) {
+                            slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                            slide.classList.add('opacity-100', 'pointer-events-auto', 'z-10');
+                        } else {
+                            slide.classList.remove('opacity-100', 'pointer-events-auto', 'z-10');
+                            slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+                        }
+                    });
+
+                    dots.forEach((dot, idx) => {
+                        if (idx === currentIndex) {
+                            dot.className = 'w-6 h-2.5 rounded-full bg-goldCustom transition-all';
+                        } else {
+                            dot.className = 'w-2.5 h-2.5 rounded-full bg-white/50 transition-all';
+                        }
+                    });
+                }
+
+                function goToSlide(index) { currentIndex = index; updateSlides(); resetTimer(); }
+                function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; updateSlides(); }
+                function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; updateSlides(); }
+                function startTimer() { slideInterval = setInterval(nextSlide, 4000); }
+                function resetTimer() { clearInterval(slideInterval); startTimer(); }
+
+                if (nextBtn) nextBtn.addEventListener('click', () => { nextSlide(); resetTimer(); });
+                if (prevBtn) prevBtn.addEventListener('click', () => { prevSlide(); resetTimer(); });
+
+                startTimer();
+            }
+        });
+    </script>
+</body>
+</html>
